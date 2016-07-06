@@ -28,11 +28,27 @@ var marvel = marvelFactory({
   version: '1'
 });
 
+// 1. Sign up for the marvel api: https://developer.marvel.com
+// 2. Get your public and private key from: https://developer.marvel.com/account
+// 3. Replace the above config with your own public and private key
+// 4. On the account page, a new allowed referer: localhost
+// 5. Make sure you hit update!
+// 6. Fork jimthedev/promises on github
+// 7. Clone <<yourusername>>/promises from github to your computer
+// 8. cd in your promises folder and run `npm install`.
+// 9. Modify marvel.js to add the name of the character as well.
+// 10.You can run a server with: `./node_modules/.bin/http-server`
+// 11.Once the server is running, you can see the code at:
+//       http://localhost:8080/marvel.html
+//
+
 // Make a call using the api
-marvel('/characters').then(function(response) { 
-  response.data.results.map(function(character){
-    var img = character.thumbnail.path + '.' + character.thumbnail.extension;
-    console.log(img);
+marvel('/characters').then(function(json) { 
+  json.data.results.map(function(character){
+    var imgPath = character.thumbnail.path + '.' + character.thumbnail.extension;
+    var img = document.createElement('img'); // Create an element node
+    img.setAttribute('src', imgPath); // Set some properties on the node
+    document.querySelector('body').appendChild(img); // Attached the node to the document
   }); 
 });
 
