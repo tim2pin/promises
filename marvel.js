@@ -23,8 +23,8 @@ function marvelFactory(config) {
 // Get an instance of the marvel api
 var marvel = marvelFactory({
   hostname: 'http://gateway.marvel.com',
-  publicKey: '05a3448298ed9a5694ebd41543a831cc',
-  privateKey: 'b99daadb62bcad353720f66de1dba592b0604ddf',
+  publicKey: '1e883cd8e8224161c01454a8a00291d4',
+  privateKey: '88effafb5aac6f6ed47faa06d51782c4c8e796f7',
   version: '1'
 });
 
@@ -45,10 +45,33 @@ var marvel = marvelFactory({
 // Make a call using the api
 marvel('/characters').then(function(json) { 
   json.data.results.map(function(character){
+
+    var characterContainer = document.createElement('character') 
     var imgPath = character.thumbnail.path + '.' + character.thumbnail.extension;
+
+    var name = character.name;
+
     var img = document.createElement('img'); // Create an element node
     img.setAttribute('src', imgPath); // Set some properties on the node
-    document.querySelector('body').appendChild(img); // Attached the node to the document
+
+    //document.querySelector('body').appendChild(img); // Attached the node to the document
+   
+
+    
+    var nameTag = document.createElement('character-name'); //create element node
+    var nameTextNode = document.createTextNode(name); //create text node
+
+    nameTag.appendChild(nameTextNode);
+    characterContainer.appendChild(nameTag);
+    characterContainer.appendChild(img);
+
+
+    var container = document.querySelector('characters');
+
+
+    container.appendChild(characterContainer);
+
+
   }); 
 });
 

@@ -1,0 +1,22 @@
+body {
+  background-color: burlywood;
+}
+character {
+  display: inline-block;
+  width: 25%;
+  text-align: center;;
+}
+
+character-name {
+  display: block;
+  font-family: fantasy;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  border: 2px solid darksalmon;
+}

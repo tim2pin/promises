@@ -1,0 +1,49 @@
+character {
+  display:inline-block;
+  margin: auto;
+  text-align: center;
+  padding-left: 3%;
+}
+
+character-name {
+  display:block;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+         letter-spacing: 2px;
+ }
+
+img {
+  max-width: 300px;
+  transition: all 0.5s ease;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+
+img:hover {
+  border-radius: 50%;
+  transform: rotate(360deg);
+}
+
+
+/* unvisited link */
+a:link {
+    color: grey;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
